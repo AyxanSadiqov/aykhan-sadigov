@@ -1,5 +1,8 @@
 <template>
-  <div>
+  <div id="home">
+    <div class="double-click-info">
+      Double click to see content
+    </div>
     <div class="container">
       <div class="tiles">
         <div
@@ -7,12 +10,14 @@
           :key="index"
           class="title"
           @click="
-            activeMenu == index + 1 ? (activeMenu = -1) : (activeMenu = index + 1)
+            activeMenu == index + 1
+              ? (activeMenu = -1)
+              : (activeMenu = index + 1)
           "
           :class="activeMenu == index + 1 ? 'active disable' : ''"
         >
           <div @click="openUrl(menu, index)" class="title-content">
-            <div class="num">0{{ index + 1 }}.</div>
+            <div class="num" :style="`color:${colors[index]}`">0{{ index + 1 }}.</div>
             <div class="text">{{ menu.name }}</div>
           </div>
         </div>
@@ -29,64 +34,111 @@ export default {
       menus: [
         {
           name: "About",
-          router: "about"
+          router: "about",
+        },
+        {
+          name: "Skills",
+          router: "skills",
         },
         {
           name: "Experience",
-          router: "experience"
-        },
-        {
-          name: "Work",
-          router: "work"
+          router: "experience",
         },
         {
           name: "Contact",
-          router: "contact"
+          router: "contact",
         },
       ],
+      colors: ["#FF0000","#FF0000","#FF0000","#FF0000"]
     };
   },
   methods: {
     openUrl(menu, index) {
-      if(this.activeMenu == index + 1) {
+      if (this.activeMenu == index + 1) {
         setTimeout(() => {
-          this.$router.push({ name: menu.router })
-        }, 1000)
+          this.$router.push({ name: menu.router });
+        }, 1000);
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
-.active {
-  transform: rotateX(-90deg) rotateY(45deg) rotateZ(0deg) translate3d(0, -120px, 0);
-  background: #cad5f5 !important;
-  cursor: pointer !important;
-}
-.container {
-  -webkit-perspective: 500px;
-  perspective: 1000px;
+#home {
   height: 100vh;
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10 and IE 11 */
-  user-select: none; /* Standard syntax */
+  overflow-y: auto;
 }
+@media screen and (min-width: 630px) {
+  // 630-dan buyukler
+  #home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 630px) {
+  // 630-dan kucukler
+  .tiles {
+    display: grid;
+    place-items: center;
+    grid-template-columns: auto !important;
+  }
+}
+@media screen and (max-width: 900px) {
+  // 900-dan kucukler
+  .active {
+    background: #cad5f5 !important;
+    cursor: pointer !important;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+  }
+  .tiles {
+    width: 630px !important;
+    display: grid;
+    place-items: center;
+    grid-template-columns: auto auto;
+  }
+  .double-click-info{
+    display: flex !important;
+    justify-content: center;
+    padding: 10px 0;
+    font-style: italic;
+    font-size: 0.8rem;
+    color: white;
+  }
+}
+@media screen and (min-width: 900px) {
+  // 900-dan buyukler
+  .active {
+    transform: rotateX(-90deg) rotateY(45deg) rotateZ(0deg)
+      translate3d(0, -120px, 0);
+    background: #cad5f5 !important;
+    cursor: pointer !important;
+  }
+  .container {
+    -webkit-perspective: 500px;
+    perspective: 1000px;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+  }
+  .tiles {
+    width: 630px;
+    height: 630px;
 
-.tiles {
-  width: 630px;
-  height: 630px;
-
-  position: relative;
-  left: 50%;
-  top: 0px;
-  margin-left: -315px;
-
-  -webkit-transform: rotateZ(0deg);
-  transform: rotateX(60deg) rotateY(0deg) rotateZ(45deg);
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  // border: 1px solid red;
+    -webkit-transform: rotateZ(0deg);
+    transform: rotateX(60deg) rotateY(0deg) rotateZ(45deg);
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    // border: 1px solid red;
+  }
+  .double-click-info{
+    display: none;
+  }
 }
 
 .title {
@@ -118,7 +170,6 @@ export default {
   .num {
     font-size: 4rem;
     font-weight: 600;
-    color: rgb(255, 0, 0);
   }
   .text {
     font-size: 2rem;
