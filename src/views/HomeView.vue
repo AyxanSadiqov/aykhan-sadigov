@@ -49,7 +49,7 @@ export default {
           router: "contact",
         },
       ],
-      colors: ["#FF0000","#FF0000","#FF0000","#FF0000"]
+      colors: ["#caff67","#FF0000","#FF0000","#FF0000"]
     };
   },
   methods: {
