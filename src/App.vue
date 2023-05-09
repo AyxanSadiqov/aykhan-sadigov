@@ -10,11 +10,25 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background-color: rgba(31,40,49,255);
+  background-color: rgba(31,40,49,1);
   font-family: 'Rubik', sans-serif;
   overflow: hidden;
 }
 #app{
   height: 100%;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(202, 213, 245, 1);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:active {
+  background: rgba(202, 213, 245, 0.8);
 }
 </style>

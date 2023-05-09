@@ -30,27 +30,27 @@ export default {
       items: [
         {
           name: "HTML",
-          performance: 100,
+          performance: 50,
         },
         {
           name: "JavaScript",
-          performance: 20,
+          performance: 50,
         },
         {
           name: "CSS",
-          performance: 80,
+          performance: 50,
         },
         {
           name: "Scss/Sass",
-          performance: 90,
+          performance: 50,
         },
         {
           name: "VueJS",
-          performance: 35,
+          performance: 50,
         },
         {
           name: "NuxtJS",
-          performance: 8,
+          performance: 50,
         },
         {
           name: "Tailwind",
@@ -58,27 +58,47 @@ export default {
         },
         {
           name: "Bootstrap",
-          performance: 75,
+          performance: 50,
         },
         {
           name: "Ajax",
-          performance: 100,
+          performance: 50,
         },
         {
           name: "AngularJS",
-          performance: 100,
+          performance: 50,
         },
         {
           name: "ReactJS",
-          performance: 100,
+          performance: 50,
         },
         {
           name: "jQuery",
-          performance: 100,
+          performance: 50,
         },
         {
           name: "TypeScript",
-          performance: 100,
+          performance: 50,
+        },
+        {
+          name: "ES5/ES6",
+          performance: 50,
+        },
+        {
+          name: "REST",
+          performance: 50,
+        },
+        {
+          name: "JSON",
+          performance: 50,
+        },
+        {
+          name: "Git",
+          performance: 50,
+        },
+        {
+          name: "npm",
+          performance: 50,
         },
       ],
     };
@@ -116,10 +136,10 @@ export default {
   background: black;
   .skills {
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     max-width: 916px;
     width: 100%;
-    color: #41a093;
+    color: #cad5f5;
     font-size: 2rem;
     font-weight: 600;
     padding: 1.5rem 0 0 2rem;
@@ -242,11 +262,11 @@ export default {
       .bar-bg {
         width: 100%;
         height: 4px;
-        background: white;
+        background: rgb(0, 0, 0);
         border-radius: 5px;
         overflow: hidden;
         .bar-front {
-          background: #41a093;
+          background: #cad5f5;
           height: 100%;
           transition: all 0.3s;
         }

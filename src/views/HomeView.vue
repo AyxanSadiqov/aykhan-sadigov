@@ -49,7 +49,7 @@ export default {
           router: "contact",
         },
       ],
-      colors: ["#caff67","#FF0000","#FF0000","#FF0000"]
+      colors: ["#1f2831","#1f2831","#1f2831","#1f2831"]
     };
   },
   methods: {
@@ -57,7 +57,7 @@ export default {
       if (this.activeMenu == index + 1) {
         setTimeout(() => {
           this.$router.push({ name: menu.router });
-        }, 1000);
+        }, 500);
       }
     },
   },
