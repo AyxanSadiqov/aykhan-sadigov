@@ -4,7 +4,7 @@
       Double click to see content
     </div>
     <div class="container">
-      <div class="tiles">
+      <div class="tiles cursorHover">
         <div
           v-for="(menu, index) in menus"
           :key="index"
@@ -90,7 +90,7 @@ export default {
   // 900-dan kucukler
   .active {
     background: #cad5f5 !important;
-    cursor: pointer !important;
+    // cursor: pointer !important;
   }
   .container {
     display: flex;
@@ -117,7 +117,7 @@ export default {
     transform: rotateX(-90deg) rotateY(45deg) rotateZ(0deg)
       translate3d(0, -120px, 0);
     background: #cad5f5 !important;
-    cursor: pointer !important;
+    // cursor: pointer !important;
   }
   .container {
     -webkit-perspective: 500px;
@@ -152,7 +152,7 @@ export default {
   margin: 0 10px 10px 0;
   background: #858dad;
   color: white;
-  cursor: default;
+  // cursor: default;
   border-radius: 5px;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;

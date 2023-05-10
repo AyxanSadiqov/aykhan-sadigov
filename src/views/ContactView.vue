@@ -99,6 +99,7 @@ ul{
       text-transform: uppercase;
       letter-spacing: 0.05em;
       transition: 0.5s;
+      cursor: none;
       & span{
         position: absolute;
         top: 0;

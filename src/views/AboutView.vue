@@ -101,7 +101,7 @@ export default {
     justify-content: center;
     align-items: center;
     transform: rotateY(calc(90deg * var(--i))) translateZ(150px);
-    cursor: pointer;
+    // cursor: pointer;
     color: #fff;
     font-size: 3.5em;
     font-weight: 800;

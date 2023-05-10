@@ -194,7 +194,7 @@ export default {
   height: 150px;
   position: relative;
   background: black;
-  cursor: default;
+  // cursor: default;
   border-radius: 5px;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
