@@ -28,7 +28,7 @@
         <a href="https://www.edusisco.net/" target="_blank">Edusisco</a>. In my
         free time I make an effort to read new articles about the technologies I
         deal with. And I'm a big
-        <span id="star-wars">star wars</span>
+        <span id="star-wars" @click="playSound()">star wars</span>
         fan. I've been following the newly released movies and series.
         <br /><br />
         When I'm not at the computer, I usually play table tennis and hang out
@@ -44,7 +44,22 @@ export default {
     return {
       showText: false,
       changePosition: "40%",
+      replayTime: 6
     };
+  },
+  methods: {
+    playSound() {
+      if(Number(this.replayTime) <= 0) this.replayTime = 6
+      if(this.replayTime < 6) return
+      const sound = new Audio( require('@/assets/audio/darth-vader.mp3') )
+      sound.play()
+      let timer = setInterval(() => {
+        if(this.replayTime <= 0.1) {
+          clearInterval(timer)
+        }
+        this.replayTime = (this.replayTime - 0.1).toFixed(1)
+      }, 100);
+    }
   },
   mounted() {
     setTimeout(() => {
@@ -73,6 +88,29 @@ export default {
   align-items: center;
   height: 100vh;
   background: black;
+}
+@media screen and (max-width: 500px) {
+  .box {
+    & div.block span {
+      left: calc(50% - 65px) !important;
+      width: 130px !important; //
+      height: 65px !important;
+      transform: rotateY(calc(90deg * var(--i))) translateZ(65px) !important; //
+    }
+    & div.text span::after {
+      width: 270px !important;
+    }
+    & div.text span {
+      transform: rotateY(calc(90deg * var(--i))) translateZ(105px) !important;
+      font-size: 2em !important;
+    }
+    & div.text span:nth-child(3) {
+      font-size: 1.7em !important;
+    }
+    & div.text span:nth-child(4) {
+      font-size: 1.5em !important;
+    }
+  }
 }
 
 .box {
@@ -156,7 +194,7 @@ export default {
 }
 
 .about-me {
-  width: 100%;
+  width: calc(100% - 1.5rem);
   max-width: 500px;
   max-height: 100%;
   overflow-y: auto;
@@ -175,8 +213,10 @@ export default {
   & #star-wars {
     color: white;
     position: relative;
+    padding: 5px;
+    margin: -5px;
     &:hover {
-      cursor: url("~@/assets/images/darth-vader.gif"), auto;
+      cursor: url("~@/assets/images/darth-vader.gif") 0 35, auto;
       color: #ebd71c;
     }
   }

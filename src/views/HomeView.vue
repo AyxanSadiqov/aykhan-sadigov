@@ -9,14 +9,10 @@
           v-for="(menu, index) in menus"
           :key="index"
           class="title"
-          @click="
-            activeMenu == index + 1
-              ? (activeMenu = -1)
-              : (activeMenu = index + 1)
-          "
+          @click="openUrl(menu, index)"
           :class="activeMenu == index + 1 ? 'active disable' : ''"
         >
-          <div @click="openUrl(menu, index)" class="title-content">
+          <div class="title-content">
             <div class="num" :style="`color:${colors[index]}`">0{{ index + 1 }}.</div>
             <div class="text">{{ menu.name }}</div>
           </div>
@@ -55,9 +51,12 @@ export default {
   methods: {
     openUrl(menu, index) {
       if (this.activeMenu == index + 1) {
+        this.activeMenu = -1
         setTimeout(() => {
           this.$router.push({ name: menu.router });
         }, 500);
+      }else{
+        this.activeMenu = index + 1
       }
     },
   },
