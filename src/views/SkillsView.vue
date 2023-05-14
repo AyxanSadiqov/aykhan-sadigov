@@ -130,6 +130,7 @@ export default {
 #about {
   height: 100vh;
   overflow-y: auto;
+  overflow-x: hidden;
   display: flex;
   align-items: center;
   flex-direction: column;

@@ -16,15 +16,23 @@
     </div>
     <transition>
       <div v-if="showText" class="about-me">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean porta
-        iaculis bibendum. Quisque pharetra efficitur nulla, quis pharetra risus
-        mattis laoreet. Sed eleifend vehicula nisl. Sed quis nulla vitae velit
-        fermentum mollis. Integer eu elit eu elit rutrum pretium id id urna.
-        Phasellus a augue magna. Sed sapien sem, vehicula sed risus eget,
-        aliquam venenatis risus. Pellentesque dapibus velit massa, sit amet
-        iaculis lacus blandit vitae. Morbi sit amet tortor vitae nisl placerat
-        consequat. Morbi enim dolor, semper at tortor vel, elementum posuere
-        orci.
+        After I entered the computer engineering department in 2015, I met
+        programming and I did many projects to improve myself during the
+        academic year. An online blood donation system that I have developed as
+        a graduation project and with enthusiasm. I've been working with django
+        for a few years, but then I found that my comfort zone was when
+        developing front-end. Fast forward to the present and I had the
+        privilege of developing software for a <span>start-up</span> and a
+        <span>midsize company</span>. <br /><br />
+        My main focus these days is developing the new product we started at
+        <a href="https://www.edusisco.net/" target="_blank">Edusisco</a>. In my
+        free time I make an effort to read new articles about the technologies I
+        deal with. And I'm a big
+        <span id="star-wars">star wars</span>
+        fan. I've been following the newly released movies and series.
+        <br /><br />
+        When I'm not at the computer, I usually play table tennis and hang out
+        with my friends.
       </div>
     </transition>
   </div>
@@ -147,6 +155,22 @@ export default {
   position: fixed;
   top: 330px;
   bottom: 0;
+  color: #8798b4;
+  & span {
+    color: white;
+  }
+  & a {
+    color: white;
+    text-decoration: none;
+    cursor: none;
+  }
+  & #star-wars {
+    color: #ebd71c;
+    position: relative;
+    &:hover {
+      cursor: url("~@/assets/images/darth-vader.gif"), auto;
+    }
+  }
 }
 .v-enter-active,
 .v-leave-active {

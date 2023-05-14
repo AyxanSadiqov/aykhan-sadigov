@@ -53,6 +53,17 @@ export default {
     document.addEventListener("mouseenter", () => {
       this.hideCursor = false;
     });
+    // mouse about me sayfasindaki star-wars yazisi ustune geldiginde gizlensin
+    setTimeout(() => {
+      var starwars = document.getElementById("star-wars");
+      starwars.addEventListener("mouseenter", () => {
+        this.hideCursor = true;
+      });
+      starwars.addEventListener("mouseleave", () => {
+        this.hideCursor = false;
+      });
+    }, 4000); // about me icindeki "showText" settimeout saniyesinden 1 saniye fazla yapildi
+
     // setTimeout(() => {
     //   var elements = document.getElementsByClassName("cursorHover");
     //   for (var i = 0; i < elements.length; i++) {
