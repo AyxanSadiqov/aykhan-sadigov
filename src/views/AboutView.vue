@@ -15,7 +15,7 @@
       </div>
     </div>
     <transition>
-      <div v-if="showText" class="about-me">
+      <div v-show="showText" class="about-me">
         After I entered the computer engineering department in 2015, I met
         programming and I did many projects to improve myself during the
         academic year. An online blood donation system that I have developed as
@@ -52,6 +52,14 @@ export default {
     }, 1000);
     setTimeout(() => {
       this.showText = true;
+      // mouse about me sayfasindaki star-wars yazisi ustune geldiginde gizlensin
+      var starwars = document.getElementById("star-wars");
+      starwars.addEventListener("mouseenter", () => {
+        this.$store.commit("hideCursor", true);
+      });
+      starwars.addEventListener("mouseleave", () => {
+        this.$store.commit("hideCursor", false);
+      });
     }, 3000);
   },
 };
@@ -165,10 +173,11 @@ export default {
     cursor: none;
   }
   & #star-wars {
-    color: #ebd71c;
+    color: white;
     position: relative;
     &:hover {
       cursor: url("~@/assets/images/darth-vader.gif"), auto;
+      color: #ebd71c;
     }
   }
 }

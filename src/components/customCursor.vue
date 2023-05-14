@@ -20,7 +20,6 @@ export default {
       xParent: 0,
       yParent: 0,
       hover: false,
-      hideCursor: true,
       //
       circleColor: "#fff", // #fff
     };
@@ -33,6 +32,9 @@ export default {
       return `transform: translateX(${this.xChild - 3}px) translateY(${
         this.yChild - 3
       }px) translateZ(0) translate3d(0, 0, 0);`;
+    },
+    hideCursor() {
+      return this.$store.state.hideCursor;
     },
   },
   methods: {
@@ -48,21 +50,11 @@ export default {
   mounted() {
     document.addEventListener("mousemove", this.moveCursor);
     document.addEventListener("mouseleave", () => {
-      this.hideCursor = true;
+      this.$store.commit("hideCursor", true);
     });
     document.addEventListener("mouseenter", () => {
-      this.hideCursor = false;
+      this.$store.commit("hideCursor", false);
     });
-    // mouse about me sayfasindaki star-wars yazisi ustune geldiginde gizlensin
-    setTimeout(() => {
-      var starwars = document.getElementById("star-wars");
-      starwars.addEventListener("mouseenter", () => {
-        this.hideCursor = true;
-      });
-      starwars.addEventListener("mouseleave", () => {
-        this.hideCursor = false;
-      });
-    }, 4000); // about me icindeki "showText" settimeout saniyesinden 1 saniye fazla yapildi
 
     // setTimeout(() => {
     //   var elements = document.getElementsByClassName("cursorHover");
