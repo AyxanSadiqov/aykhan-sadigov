@@ -103,6 +103,18 @@ export default {
       ],
     };
   },
+  mounted() {
+    document.addEventListener("click", function (evt) {
+      if (evt.detail === 3) {
+        var element = document.getElementsByClassName("title-content");
+        for (let i = 0; i < element.length; i++) {
+          element[i].classList.contains("blendMode")
+            ? element[i].classList.remove("blendMode")
+            : element[i].classList.add("blendMode");
+        }
+      }
+    });
+  },
   computed: {
     itemsFunc() {
       let items = this.items;
@@ -274,5 +286,9 @@ export default {
       }
     }
   }
+}
+
+.blendMode {
+  mix-blend-mode: darken;
 }
 </style>

@@ -4,7 +4,7 @@
       Double click to see content
     </div>
     <div class="container">
-      <div class="tiles cursorHover">
+      <div id="tilesId" class="tiles cursorHover">
         <div
           v-for="(menu, index) in menus"
           :key="index"
@@ -48,7 +48,22 @@ export default {
       colors: ["#1f2831","#1f2831","#1f2831","#1f2831"]
     };
   },
+  mounted() {
+    document.addEventListener("click", this.documentClick)
+  },
+  beforeUnmount() {
+    document.removeEventListener("click", this.documentClick)
+  },
   methods: {
+    documentClick(e) {
+      let el = document.getElementById("tilesId")
+      let target = e.target
+      if (el !== target && !el.contains(target)) {
+        setTimeout(() => {
+          this.activeMenu = -1
+        }, 200)
+      }
+    },
     openUrl(menu, index) {
       if (this.activeMenu == index + 1) {
         this.activeMenu = -1
