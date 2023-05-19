@@ -146,7 +146,7 @@ export default {
   display: flex;
   align-items: center;
   flex-direction: column;
-  background: black;
+  background: #0f0f0f;
   .skills {
     display: flex;
     justify-content: flex-start;
@@ -161,7 +161,7 @@ export default {
 .container {
   display: flex;
   justify-content: center;
-  background: black;
+  background: #0f0f0f;
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
@@ -206,7 +206,7 @@ export default {
   max-height: 150px;
   height: 150px;
   position: relative;
-  background: black;
+  background: #0f0f0f;
   // cursor: default;
   border-radius: 5px;
   -webkit-transition: all 0.3s;
@@ -275,7 +275,7 @@ export default {
       .bar-bg {
         width: 100%;
         height: 4px;
-        background: rgb(0, 0, 0);
+        background: #0f0f0f;
         border-radius: 5px;
         overflow: hidden;
         .bar-front {

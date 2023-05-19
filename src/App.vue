@@ -36,10 +36,7 @@ body {
   border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(202, 213, 245, 1);
+  background: #8798b480;
   border-radius: 10px;
-}
-::-webkit-scrollbar-thumb:active {
-  background: rgba(202, 213, 245, 0.8);
 }
 </style>

@@ -29,7 +29,7 @@ export default {};
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background: black;
+  background: rgba(31, 40, 49, 1);
   color: white;
 }
 

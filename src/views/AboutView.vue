@@ -19,7 +19,7 @@
         After I entered the computer engineering department in 2015, I met
         programming and I did many projects to improve myself during the
         academic year. An online blood donation system that I have developed as
-        a graduation project and with enthusiasm. I've been working with django
+        a graduation project and with enthusiasm. I've worked with django
         for a few years, but then I found that my comfort zone was when
         developing front-end. Fast forward to the present and I had the
         privilege of developing software for a <span>start-up</span> and a
@@ -87,7 +87,7 @@ export default {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: black;
+  background: #0f0f0f;
 }
 @media screen and (max-width: 500px) {
   .box {

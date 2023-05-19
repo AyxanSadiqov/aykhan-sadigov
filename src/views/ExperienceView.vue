@@ -95,7 +95,7 @@ export default {};
   justify-content: flex-start;
   flex-direction: column;
   gap: 1rem;
-  background: black;
+  background: #0f0f0f;
   color: white;
   padding: 2rem 0;
 }
