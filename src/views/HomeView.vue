@@ -83,8 +83,8 @@ export default {
   height: 100vh;
   overflow-y: auto;
 }
-@media screen and (min-width: 630px) {
-  // 630-dan buyukler
+@media screen and (min-width: 900px) {
+  // 900-den buyukler
   #home {
     display: flex;
     flex-direction: column;
@@ -109,6 +109,7 @@ export default {
   .container {
     display: flex;
     justify-content: center;
+    padding-bottom: 3rem;
   }
   .tiles {
     width: 630px !important;

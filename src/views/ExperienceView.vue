@@ -129,6 +129,7 @@ export default {};
   align-items: center;
   flex-direction: column;
   gap: 1rem;
+  padding-bottom: 5rem;
   &:hover .each {
     opacity: 0.4;
   }
@@ -141,6 +142,7 @@ export default {};
   grid-template-columns: repeat(4, 1fr);
   border-radius: 0.3rem;
   transition: 0.3s;
+  margin: 0 5px;
   &:hover {
     background: rgba(202, 213, 245, 0.2);
     opacity: 1 !important;

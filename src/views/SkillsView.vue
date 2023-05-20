@@ -7,7 +7,7 @@
           <div class="title-border"></div>
           <div class="title-content">
             <div class="name">{{ item.name }}</div>
-            <div class="bar">
+            <!-- <div class="bar">
               <div class="bar-bg">
                 <div
                   class="bar-front"
@@ -15,7 +15,7 @@
                 ></div>
               </div>
               <div class="bar-text">{{ item.performance || 0 }} %</div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -29,76 +29,80 @@ export default {
     return {
       items: [
         {
-          name: "HTML",
-          performance: 50,
-        },
-        {
-          name: "JavaScript",
-          performance: 50,
-        },
-        {
-          name: "CSS",
-          performance: 50,
-        },
-        {
-          name: "Scss/Sass",
-          performance: 50,
-        },
-        {
           name: "VueJS",
-          performance: 50,
+          performance: 100,
         },
         {
           name: "NuxtJS",
-          performance: 50,
+          performance: 100,
+        },
+        {
+          name: "JavaScript",
+          performance: 100,
+        },
+        {
+          name: "HTML",
+          performance: 100,
+        },
+        {
+          name: "CSS",
+          performance: 100,
         },
         {
           name: "Tailwind",
-          performance: 50,
-        },
-        {
-          name: "Bootstrap",
-          performance: 50,
-        },
-        {
-          name: "Ajax",
-          performance: 50,
+          performance: 100,
         },
         {
           name: "AngularJS",
-          performance: 50,
+          performance: 85,
         },
         {
           name: "ReactJS",
-          performance: 50,
+          performance: 85,
         },
         {
           name: "jQuery",
-          performance: 50,
+          performance: 95,
+        },
+        {
+          name: "Scss/Sass",
+          performance: 100,
         },
         {
           name: "TypeScript",
-          performance: 50,
+          performance: 90,
         },
         {
           name: "ES5/ES6",
-          performance: 50,
+          performance: 100,
+        },
+        {
+          name: "Bootstrap",
+          performance: 100,
+        },
+        {
+          name: "Svelte",
+          performance: 95,
         },
         {
           name: "REST",
-          performance: 50,
+          performance: 95,
+        },
+        {
+          name: "Ajax",
+          performance: 90,
         },
         {
           name: "JSON",
-          performance: 50,
-        },
-        {
-          name: "Git",
-          performance: 50,
+          performance: 100,
         },
         {
           name: "npm",
-          performance: 50,
+          performance: 95,
+        },
+        {
+          name: "Git",
+          performance: 95,
         },
       ],
     };
@@ -117,11 +121,12 @@ export default {
   },
   computed: {
     itemsFunc() {
-      let items = this.items;
-      let sortedItem = items.sort((a, b) =>
-        a.performance < b.performance ? 1 : -1
-      );
-      return sortedItem;
+      // let items = this.items;
+      // let sortedItem = items.sort((a, b) =>
+      //   a.performance < b.performance ? 1 : -1
+      // );
+      // return sortedItem;
+      return this.items
     },
   },
   methods: {
@@ -162,6 +167,7 @@ export default {
   display: flex;
   justify-content: center;
   background: #0f0f0f;
+  padding-bottom: 3rem;
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
@@ -179,7 +185,7 @@ export default {
     display: grid !important;
     place-items: center !important;
     grid-template-columns: auto auto;
-    width: 98vw !important;
+    width: 90vw !important;
   }
   .title {
     max-width: 100% !important;
@@ -187,10 +193,10 @@ export default {
   }
 }
 .card {
-  padding-top: 1rem;
+  padding: 1rem;
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 5px;
   max-width: 916px;
   position: relative;
   // border: 5px solid red;
@@ -203,8 +209,8 @@ export default {
 .title {
   max-width: 32%;
   width: 100%;
-  max-height: 150px;
-  height: 150px;
+  max-height: 90px;
+  height: 90px;
   position: relative;
   background: #0f0f0f;
   // cursor: default;
@@ -236,7 +242,7 @@ export default {
   }
   .title-border {
     background: radial-gradient(
-      400px circle at var(--mouse-x) var(--mouse-y),
+      200px circle at var(--mouse-x) var(--mouse-y),
       rgba(255, 255, 255, 0.4),
       /* opacity 0.3 idi */ transparent 40%
     );

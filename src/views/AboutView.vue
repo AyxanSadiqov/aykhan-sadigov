@@ -25,7 +25,7 @@
         privilege of developing software for a <span>start-up</span> and a
         <span>midsize company</span>. <br /><br />
         My main focus these days is developing the new product we started at
-        <a href="https://www.edusisco.net/" target="_blank">Edusisco</a>. In my
+        <a href="https://www.edusisco.com/" target="_blank">Edusisco</a>. In my
         free time I make an effort to read new articles about the technologies I
         deal with. And I'm a big
         <span id="star-wars" @click="playSound()">star wars</span>
@@ -94,10 +94,11 @@ export default {
     & div.block span {
       left: calc(50% - 65px) !important;
       width: 130px !important; //
-      height: 65px !important;
+      height: 75px !important;
       transform: rotateY(calc(90deg * var(--i))) translateZ(65px) !important; //
     }
     & div.text span::after {
+      top: 70px !important;
       width: 270px !important;
     }
     & div.text span {
@@ -110,6 +111,9 @@ export default {
     & div.text span:nth-child(4) {
       font-size: 1.5em !important;
     }
+  }
+  .about-me {
+    top: 300px !important;
   }
 }
 
@@ -202,6 +206,7 @@ export default {
   top: 330px;
   bottom: 0;
   color: #8798b4;
+  margin-bottom: 1.5rem;
   & span {
     color: white;
   }
