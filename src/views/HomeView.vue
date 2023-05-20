@@ -109,7 +109,7 @@ export default {
   .container {
     display: flex;
     justify-content: center;
-    padding-bottom: 3rem;
+    padding-bottom: 5rem;
   }
   .tiles {
     width: 630px !important;

@@ -6,8 +6,10 @@
       { 'g-cursor_hide': hideCursor },
     ]"
   >
-    <div :style="cursorCircle" class="g-cursor__circle"></div>
-    <div class="g-cursor__point" ref="point" :style="cursorPoint"></div>
+    <div v-if="!isMobile()">
+      <div :style="cursorCircle" class="g-cursor__circle" style="color:white"></div>
+      <div class="g-cursor__point" ref="point" :style="cursorPoint"></div>
+    </div>
   </div>
 </template>
 
@@ -46,6 +48,10 @@ export default {
         this.yParent = e.clientY - 9.5; // daha buyugu icin 15 yap
       }, 100);
     },
+    isMobile() {
+      if (window.innerWidth > 1024) return false
+      else return true
+    }
   },
   mounted() {
     document.addEventListener("mousemove", this.moveCursor);
@@ -55,6 +61,7 @@ export default {
     document.addEventListener("mouseenter", () => {
       this.$store.commit("hideCursor", false);
     });
+    window.addEventListener("resize", this.isMobile);
 
     // setTimeout(() => {
     //   var elements = document.getElementsByClassName("cursorHover");
@@ -72,9 +79,12 @@ export default {
 </script>
 
 <style lang="scss">
-html,
-body {
-  cursor: none !important;
+@media screen and (min-width: 1024px) {
+  // 1024-den buyukler
+  html,
+  body {
+    cursor: none !important;
+  }
 }
 .g-cursor {
   &_hide {

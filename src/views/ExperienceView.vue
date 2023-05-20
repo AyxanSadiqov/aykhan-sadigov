@@ -129,7 +129,7 @@ export default {};
   align-items: center;
   flex-direction: column;
   gap: 1rem;
-  padding-bottom: 5rem;
+  padding-bottom: 7rem;
   &:hover .each {
     opacity: 0.4;
   }
