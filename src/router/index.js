@@ -4,6 +4,7 @@ import AboutView from '../views/AboutView.vue'
 import SkillsView from '../views/SkillsView.vue'
 import ExperienceView from '../views/ExperienceView.vue'
 import ContactView from '../views/ContactView.vue'
+import HeartView from '../views/HeartView.vue'
 
 const routes = [
   {
@@ -30,6 +31,11 @@ const routes = [
     path: '/contact',
     name: 'contact',
     component: ContactView
+  },
+  {
+    path: '/heart',
+    name: 'heart',
+    component: HeartView
   },
 ]
 

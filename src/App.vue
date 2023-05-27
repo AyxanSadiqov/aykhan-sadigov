@@ -1,15 +1,18 @@
 <template>
   <div id="app">
     <router-view />
+    <back-btn />
     <custom-cursor />
   </div>
 </template>
 
 <script>
+import backBtn from './components/backBtn.vue';
 import customCursor from "./components/customCursor.vue";
 
 export default {
   components: {
+    backBtn,
     customCursor,
   },
 };
