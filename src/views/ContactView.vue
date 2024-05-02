@@ -11,8 +11,8 @@
 
       <li style="--i:-2;--clr:#4078c0;" data-text="GitHub"><a href="https://github.com/AyxanSadiqov" target="_blank"><span><fa :icon="['fab', 'github']" /></span>GitHub</a></li>
       <li style="--i:-1;--clr:#0a66c2;" data-text="Linkedin"><a href="https://www.linkedin.com/in/aykhan-sadiqov/" target="_blank"><span><fa :icon="['fab', 'linkedin']" /></span>Linkedin</a></li>
-      <li style="--i:0;--clr:#c32aa3;" data-text="Instagram"><a href="#"><span><fa :icon="['fab', 'instagram']" /></span>Instagram</a></li>
-      <li style="--i:1;--clr:#1da1f2;" data-text="Twitter"><a href="#"><span><fa :icon="['fab', 'twitter']" /></span>Twitter</a></li>
+      <li style="--i:0;--clr:#c32aa3;" data-text="Instagram"><a href="https://www.instagram.com/aykhan.sadig/" target="_blank"><span><fa :icon="['fab', 'instagram']" /></span>Instagram</a></li>
+      <li style="--i:1;--clr:#fcbc06;" data-text="E-mail"><a href="mailto:ayxan.sadiq.98@gmail.com"><span><fa :icon="['fa', 'envelope']" /></span>E-mail</a></li>
     </ul>
   </div>
 </template>

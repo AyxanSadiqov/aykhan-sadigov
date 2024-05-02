@@ -1,5 +1,6 @@
 <template>
   <div id="home">
+    <welcomeModal :value="showWelcomeModal" @close="showWelcomeModal = val" />
     <div class="double-click-info">
       Double click to see content
     </div>
@@ -23,7 +24,12 @@
 </template>
 
 <script>
+import welcomeModal from '@/components/welcomeModal.vue';
+
 export default {
+  components: {
+    welcomeModal
+  },
   data() {
     return {
       activeMenu: -1,
@@ -45,7 +51,8 @@ export default {
           router: "contact",
         },
       ],
-      colors: ["#1f2831","#1f2831","#1f2831","#1f2831"]
+      colors: ["#1f2831","#1f2831","#1f2831","#1f2831"],
+      showWelcomeModal: true
     };
   },
   mounted() {
