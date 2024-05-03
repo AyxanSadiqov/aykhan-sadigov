@@ -7,13 +7,46 @@
 </template>
 
 <script>
-import backBtn from './components/backBtn.vue';
+import backBtn from "./components/backBtn.vue";
 import customCursor from "./components/customCursor.vue";
 
 export default {
   components: {
     backBtn,
     customCursor,
+  },
+  data() {
+    return {
+      blinkEvent: null
+    }
+  },
+  mounted() {
+    document.addEventListener("visibilitychange", this.ifOnAnotherPage);
+  },
+  beforeUnmount() {
+    document.removeEventListener("visibilitychange", this.ifOnAnotherPage);
+  },
+  methods: {
+    ifOnAnotherPage() {
+      var isPageActive = !document.hidden;
+      if (!isPageActive) {
+        this.blink();
+      } else {
+        document.title = process.env.VUE_APP_TITLE; // tekrar geri geldiginde sayfa basliginin adi
+        clearInterval(this.blinkEvent);
+      }
+    },
+    blink() {
+      // sayfada olmadiginda baslik sirayla "Frontend development" ve "attentionMessage" olarak degisir
+      var attentionMessage = "Responsive, flexible website built!";
+      this.blinkEvent = setInterval(function () {
+        if (document.title === attentionMessage) {
+          document.title = "Frontend development";
+        } else {
+          document.title = attentionMessage;
+        }
+      }, 1000);
+    },
   },
 };
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div id="home">
-    <welcomeModal :value="showWelcomeModal" @close="showWelcomeModal = val" />
+    <welcomeModal :value="showWelcomeModal" @close="closeModal" />
     <div class="double-click-info">
       Double click to see content
     </div>
@@ -52,11 +52,12 @@ export default {
         },
       ],
       colors: ["#1f2831","#1f2831","#1f2831","#1f2831"],
-      showWelcomeModal: true
+      showWelcomeModal: false
     };
   },
   mounted() {
     document.addEventListener("click", this.documentClick)
+    if (!localStorage.getItem("asfd")) this.showWelcomeModal = true
   },
   beforeUnmount() {
     document.removeEventListener("click", this.documentClick)
@@ -81,6 +82,10 @@ export default {
         this.activeMenu = index + 1
       }
     },
+    closeModal(val) {
+      this.showWelcomeModal = val
+      localStorage.setItem("asfd", this.showWelcomeModal)
+    }
   },
 };
 </script>
