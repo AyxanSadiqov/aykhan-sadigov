@@ -19,6 +19,12 @@
             <a href="https://www.edusisco.net/" target="_blank"
               ><fa :icon="['fa', 'link']" class="icon" /> Edusisco</a
             >
+            <a href="https://edunext.ai/" target="_blank"
+              ><fa :icon="['fa', 'link']" class="icon" /> Edunext</a
+            >
+            <a href="https://www.securehub.ai/" target="_blank"
+              ><fa :icon="['fa', 'link']" class="icon" /> SecureHub</a
+            >
           </div>
           <div class="work-skills">
             <div class="skills">Vue.js</div>
@@ -115,6 +121,7 @@ export default {};
     top: 4.5rem;
     left: -3rem;
     transform: rotate(-90deg);
+    transition: 0.1s;
   }
   .each {
     grid-template-columns: repeat(8, 1fr) !important;
@@ -190,7 +197,11 @@ export default {};
       color: #8798b4;
     }
     & .projects {
-      &:hover a {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      a:hover {
         color: #cad5f5;
       }
       & .icon {

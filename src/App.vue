@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <router-view />
-    <back-btn />
-    <custom-cursor />
+    <back-btn v-if="showBackButton" />
+    <custom-cursor v-if="showCustomCursor" />
   </div>
 </template>
 
@@ -25,6 +25,14 @@ export default {
   },
   beforeUnmount() {
     document.removeEventListener("visibilitychange", this.ifOnAnotherPage);
+  },
+  computed: {
+    showBackButton() {
+      return this.$route.name != "SoapBubblesView"
+    },
+    showCustomCursor() {
+      return this.$route.name != "SoapBubblesView"
+    }
   },
   methods: {
     ifOnAnotherPage() {

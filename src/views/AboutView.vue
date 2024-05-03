@@ -69,10 +69,10 @@ export default {
       this.showText = true;
       // mouse about me sayfasindaki star-wars yazisi ustune geldiginde gizlensin
       var starwars = document.getElementById("star-wars");
-      starwars.addEventListener("mouseenter", () => {
+      starwars?.addEventListener("mouseenter", () => {
         this.$store.commit("hideCursor", true);
       });
-      starwars.addEventListener("mouseleave", () => {
+      starwars?.addEventListener("mouseleave", () => {
         this.$store.commit("hideCursor", false);
       });
     }, 3000);
