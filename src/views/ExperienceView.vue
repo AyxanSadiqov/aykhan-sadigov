@@ -115,16 +115,13 @@ export default {};
     width: 100% !important;
   }
 }
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 450px) {
   .work-time {
     position: absolute;
     top: 4.5rem;
     left: -3rem;
     transform: rotate(-90deg);
     transition: 0.1s;
-  }
-  .each {
-    grid-template-columns: repeat(8, 1fr) !important;
   }
   .work {
     grid-column: 1 / 8 !important;
