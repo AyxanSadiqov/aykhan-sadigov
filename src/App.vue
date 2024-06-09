@@ -46,7 +46,7 @@ export default {
     },
     blink() {
       // sayfada olmadiginda baslik sirayla "Frontend development" ve "attentionMessage" olarak degisir
-      var attentionMessage = "Responsive, flexible website built!";
+      var attentionMessage = "Responsive and flexible website built!";
       this.blinkEvent = setInterval(function () {
         if (document.title === attentionMessage) {
           document.title = "Frontend development";
